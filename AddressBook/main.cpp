@@ -10,7 +10,8 @@ void showMenu() {
 	cout << "*******   2. 删除联系人  *******" << endl;
 	cout << "*******   3. 修改联系人  *******" << endl;
 	cout << "*******   4. 显示联系人  *******" << endl;
-	cout << "*******   5. 清空联系人  *******" << endl;
+	cout << "*******   5. 查找联系人  *******" << endl;
+	cout << "*******   6. 清空联系人  *******" << endl;
 	cout << "*******   0. 退出        *******" << endl;
 	cout << "********************************" << endl << endl;
 }
@@ -100,6 +101,23 @@ void listPerson(AddressBook &addressbook) {
 	cout << "显示完毕，一共" << i << "条记录" << endl; 
 }
 
+void findPerson(AddressBook &addressbook)  {
+	string name;
+	cout << "请输入名字：" << endl;
+	cin >> name;
+	Person person = addressbook.findElement(name);
+	if(person.name.empty()) {
+		cout << "查无此人！" << endl;
+	}
+	else {
+		string temp;
+		if(person.sex == 1) temp = "男";
+		else temp = "女";
+		cout << "联系人信息如下：" << endl;
+		cout << person.name << "\t" << person.age << "\t" << temp << "\t" << person.address << "\t" << person.phone << endl;
+	}
+}
+
 void clearPerson(AddressBook &addressbook) {
 	addressbook.clearElement();
 	cout << "清空成功！" << endl;
@@ -130,6 +148,9 @@ int main(void) {
 				listPerson(addressbook);
 				break;
 			case 5:
+				findPerson(addressbook);
+				break;
+			case 6:
 				clearPerson(addressbook);
 				break;
 			case 0:

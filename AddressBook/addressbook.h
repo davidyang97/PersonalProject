@@ -33,6 +33,7 @@ class AddressBook {
 		bool deleteElement(string name);
 		bool modifyElement(Person person);
 		vector<Person> listElement();
+		Person findElement(string name);
 		void clearElement(); 
 };
 

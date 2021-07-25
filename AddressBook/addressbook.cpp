@@ -44,6 +44,18 @@ vector<Person> AddressBook::listElement() {
 	return result;
 }
 
+Person AddressBook::findElement(string name) {
+	Person person;
+	unordered_map<string, Person>::iterator it = this->personList.find(name);
+	if(it == personList.end()) {
+		return person;
+	} 
+	else {
+		person = personList[name];
+		return person;
+	}
+}  
+
 void AddressBook::clearElement() {
 	this->personList.clear();
 }

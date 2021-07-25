@@ -17,6 +17,7 @@ class Person {
 		int sex;
 		string address;
 		string phone;
+		Person();
 		Person(string &name, int &age, int &sex, string &address, string &phone);
 };
 
