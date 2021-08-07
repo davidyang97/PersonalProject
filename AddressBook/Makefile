@@ -2,7 +2,7 @@ CC = g++
 
 .SUFFIXES: .cpp
 .cpp.o:
-	$(CC) -c $<
+	$(CC) -c $< -o $@
 
 all: main.exe
 
