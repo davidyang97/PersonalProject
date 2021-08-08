@@ -1,16 +1,16 @@
 #include "Staff.h"
 
 string Staff::responsibility() {
-    string result = "瀹屾垚缁忕悊缁欑殑浠诲姟" << endl;
+    string result = "完成经理给的任务\n";
     return result;
 }
 
 string Staff::getType() {
-    string result = "鑱屽憳";
+    string result = "职员";
     return result;
 }
 
 string Staff::showInfo() {
-    string result;
-    result << code << " " << name << " " << age << " " << getType() << endl;
+    string result = code + " " + name + " " + to_string(age) + " " + getType() + "\n";
+    return result;
 }

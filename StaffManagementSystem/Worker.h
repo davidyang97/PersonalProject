@@ -12,9 +12,9 @@ public:
 
     Worker(string code, string name, unsigned int age);
 
-    string responsibility() = 0;
+    virtual string responsibility() = 0;
 
-    string getType() = 0;
+    virtual string getType() = 0;
 
-    string showInfo() = 0;
+    virtual string showInfo() = 0;
 };

@@ -1,19 +1,20 @@
 #pragma once
 #include <string>
+
 #include "Worker.h"
 
 using namespace std;
 
-class Staff: public class Worker {
+class Staff: public Worker {
 
 public:
-    Staff(string code, string name, unsigned int age)：Worker(string code, string name, unsigned int age) {
+    Staff(string code, string name, unsigned int age): Worker(code, name, age) {
         
     }
 
-    string responsibility();
+    virtual string responsibility();
 
-    string getType();
+    virtual string getType();
 
-    string showInfo();
-}
+    virtual string showInfo();
+};
