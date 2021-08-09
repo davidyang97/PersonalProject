@@ -96,13 +96,22 @@ void ManagementSystem::addStaff() {
         while(error) {
             cout << "输入工号：" << endl;
             cin >> code;
-
-            if(this->lessList.find(stoi(code)) != this->lessList.end()) {
-                cout << "工号重复" << endl;
+            try {
+                int i_code = stoi(code);
+                if(this->lessList.find(i_code) != this->lessList.end()) {
+                    cout << "工号重复" << endl;
+                }
+                else {
+                    error = false;
+                }
+            } 
+            catch(std::invalid_argument&) {
+                cout << "工号: " + code + " 格式错误" << endl;
             }
-            else {
-                error = false;
+            catch(std::out_of_range&) {
+                cout << "工号: " + code + " 超出范围" << endl;
             }
+                 
         }
         
         cout << "输入姓名：" << endl;
@@ -211,8 +220,17 @@ void ManagementSystem::readList() {
             }
             
             if(temp != NULL) {
-                lessList[stoi(code)] = temp;
-                greaterList[stoi(code)] = temp;
+                try {
+                    int i_code = stoi(code);
+                    lessList[i_code] = temp;
+                    greaterList[i_code] = temp;
+                } 
+                catch(std::invalid_argument&) {
+    	            cout << "工号: " + code + " 格式错误" << endl;
+	            }
+                catch(std::out_of_range&) {
+                    cout << "工号: " + code + " 超出范围" << endl;
+                }
             }
         }
         else {

@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <stdexcept>
 #include <map>
 #include "Worker.h"
 #include "Staff.h"
