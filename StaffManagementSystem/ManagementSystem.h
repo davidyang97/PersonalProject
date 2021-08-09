@@ -31,9 +31,13 @@ public:
 private:
     map<int, Worker*, less<int>> lessList;
     map<int, Worker*, greater<int>> greaterList; 
+    map<string, Worker*> nameList;
     int num;
 
     void readList(); 
     void saveList();
-
+    Worker* findCode(int code);
+    Worker* findName(string name);
+    Worker* findOne();
+    Worker* addOne();
 };
