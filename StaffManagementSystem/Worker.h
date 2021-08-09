@@ -9,6 +9,7 @@ public:
     string code;
     string name;
     unsigned int age;
+    unsigned int type;
 
     Worker(string code, string name, unsigned int age);
 
@@ -16,5 +17,7 @@ public:
 
     virtual string getType() = 0;
 
-    virtual string showInfo() = 0;
+    virtual string showInfo();
+
+    virtual string showRecord();
 };

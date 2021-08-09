@@ -4,7 +4,7 @@ CC = g++
 .cpp.o:
 	$(CC) -c $< -o $@ -std=c++11
 	
-all: test.exe
+all: main.exe
 
-test.exe: test.o Worker.o Staff.o
+main.exe: main.o Worker.o Staff.o Manager.o Boss.o ManagementSystem.o
 	$(CC) -o $@ $? -std=c++11
