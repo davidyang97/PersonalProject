@@ -1,3 +1,5 @@
+#include <cstdio>
+
 template <class T>
 class Array {
 public:
@@ -40,7 +42,7 @@ public:
 
     T operator[](int i) {
         if(i < 0 || i >= size) {
-            T temp("", 0);
+            T temp;
             return temp;
         }
         else {
@@ -48,7 +50,7 @@ public:
         }
     }
 
-    bool addElement(T &element) {
+    bool addElement(const T& element) {
         if(size >= length) return false;
         list[size] = element;
         size++;
