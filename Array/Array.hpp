@@ -20,13 +20,22 @@ public:
         delete[] list;
     }
 
-    void operator=(const Array &arr) {
+    Array& operator=(const Array &arr) {
+        if(list != NULL) {
+            delete[] list;
+            list = NULL;
+            length = 0;
+            size = 0;
+        }
+
         this->list = new T[arr.length];
         for(int i = 0; i < arr.length; i++) {
             list[i] = arr.list[i];
         }
         this->length = arr.length;
         this->size = arr.size;
+
+        return *this;
     }
 
     T operator[](int i) {
