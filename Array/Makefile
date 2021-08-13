@@ -1,5 +1,5 @@
 CC = g++
-objects = main.o Person.o Array.hpp
+objects = main.o Person.o
 
 .SUFFIXES: .cpp
 .cpp.o:
@@ -8,3 +8,5 @@ objects = main.o Person.o Array.hpp
 all: main.exe
 main.exe: $(objects)
 	$(CC) -o $@ $(objects) -std=c++11
+	
+main.o: Array.hpp Person.h
